@@ -19,7 +19,7 @@ let package = Package(
         .binaryTarget(
             name: "oneSDKBranch",
             url: "https://github.com/globaljollity/ios_sdk_test/raw/main/oneSDK.xcframework.zip",
-            checksum: "aa66df7db160c163bbf9da97dfa36ce8a0ea9613ffbff3925d5f9ec433f06799"
+            checksum: "7f0b0b357e7892a2a08095fe98dea35b7530a841bb2bf85b28b096d93eb88d2d"
         ),
         .target(
             name: "oneSDK",
