@@ -1,5 +1,5 @@
 {
-  "originHash" : "f0163764e647d3e19347ba5504c5960789a30010b3acf1acc6e9a97c6ebfe0f1",
+  "originHash" : "9721ebbe88df2ab40d7517f94c09fa924a108d1e157f4403dce49a91f18398c5",
   "pins" : [
     {
       "identity" : "adjust_signature_sdk",
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/facebook/facebook-ios-sdk.git",
       "state" : {
-        "revision" : "c19607d535864533523d1f437c84035e5fb101cf",
-        "version" : "14.1.0"
+        "revision" : "c3d367656ae8ced1149c2c6a5e6b5dd91ecad63c",
+        "version" : "9.3.0"
       }
     },
     {

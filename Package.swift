@@ -19,14 +19,14 @@ let package = Package(
         .binaryTarget(
             name: "oneSDKBranch",
             url: "https://github.com/globaljollity/ios_sdk_test/raw/main/oneSDK.xcframework.zip",
-            checksum: "b464bb6798ce6d91b6d23cac45fe3d3c979aa9956dc82950e43b6efb63017368"
+            checksum: "e673092e19ad31c1dcbad91d6000b98a43eed0561b3a6b35944c62a8276bd80e"
         ),
         .target(
             name: "oneSDK",
             dependencies: [
                 "oneSDKBranch",
-                .product(name: "FacebookAEM", package: "facebook-ios-sdk"),
-                .product(name: "FacebookBasics", package: "facebook-ios-sdk"),
+//                .product(name: "FacebookAEM", package: "facebook-ios-sdk"),
+//                .product(name: "FacebookBasics", package: "facebook-ios-sdk"),
                 .product(name: "FacebookCore", package: "facebook-ios-sdk"),
                 .product(name: "FacebookLogin", package: "facebook-ios-sdk"),
                 .product(name: "FacebookShare", package: "facebook-ios-sdk"),
