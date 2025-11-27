@@ -11,7 +11,7 @@ let package = Package(
             targets: ["oneSDK"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/facebook/facebook-ios-sdk.git", from: "14.1.0"),
+        .package(url: "https://github.com/facebook/facebook-ios-sdk.git", from: "9.0.0"),
         .package(url: "https://github.com/google/GoogleSignIn-iOS.git", from: "8.0.0"),
         .package(url: "https://github.com/adjust/ios_sdk.git", from: "5.4.0")
     ],
