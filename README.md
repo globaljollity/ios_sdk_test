@@ -5,6 +5,9 @@ Adjust版本5.4.0
 
 未经授权, 禁止使用  
 
+## Version 2.0.30  
+添加-ObjC参数  
+
 ## Version 2.0.29  
 fb 改为9.0.0, 移除-ObjC参数  
 
