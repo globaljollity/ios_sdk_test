@@ -5,6 +5,9 @@ Adjust版本5.4.0
 
 未经授权, 禁止使用  
 
+## Version 2.0.27  
+移除fb sdk  
+
 ## Version 2.0.26  
 旧版本测试6  
 
