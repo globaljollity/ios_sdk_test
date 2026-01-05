@@ -10,20 +10,20 @@ let package = Package(
             name: "oneSDK",
             targets: ["oneSDK"]),
     ],
-    dependencies: 
-    ],
+    dependencies: [],
     targets: [
         .binaryTarget(
             name: "oneSDKBranch",
             url: "https://github.com/globaljollity/ios_sdk_test/raw/main/oneSDK.xcframework.zip",
-            checksum: "14b7fb11122e57c7ec6d67b8f81f230052e9e92f3c7788e4239959cee9041aef"
+            checksum: "f1a789b928c5002859e4c01a6dec7c503c8fc5ac2e0c1521a9a8d89a4c2202ca"
         ),
         .target(
             name: "oneSDK",
             dependencies: [
-                "oneSDKBranch"
+                "oneSDKBranch" // 仅依赖二进制包，无其他第三方依赖
             ],
             linkerSettings: [
+                
             ]
         ),
         .testTarget(
