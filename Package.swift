@@ -10,17 +10,30 @@ let package = Package(
             name: "oneSDK",
             targets: ["oneSDK"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/facebook/facebook-ios-sdk.git", from: "9.0.0"),
+        .package(url: "https://github.com/google/GoogleSignIn-iOS.git", from: "8.0.0"),
+        .package(url: "https://github.com/adjust/ios_sdk.git", from: "5.4.0")
+    ],
     targets: [
         .binaryTarget(
             name: "oneSDKBranch",
             url: "https://github.com/globaljollity/ios_sdk_test/raw/main/oneSDK.xcframework.zip",
-            checksum: "3dfc4887b5d8a512672641028b18aa8ef81e4e8652ed6d38ece86d6e800b4303"
+            checksum: "b83329c10282e25b634179a207fb524c29d764f8a1ebbc0cc670f7366ab555be"
         ),
         .target(
             name: "oneSDK",
             dependencies: [
-                "oneSDKBranch"
+                "oneSDKBranch",
+                .product(name: "FacebookCore", package: "facebook-ios-sdk"),
+                .product(name: "FacebookLogin", package: "facebook-ios-sdk"),
+                .product(name: "FacebookShare", package: "facebook-ios-sdk"),
+                .product(name: "FacebookGamingServices", package: "facebook-ios-sdk"),
+                .product(name: "AdjustGoogleOdm", package: "ios_sdk"),
+                .product(name: "AdjustSdk", package: "ios_sdk"),
+                .product(name: "AdjustWebBridge", package: "ios_sdk"),
+                .product(name: "GoogleSignIn", package: "GoogleSignIn-iOS"),
+                .product(name: "GoogleSignInSwift", package: "GoogleSignIn-iOS")
             ],
             linkerSettings: [
                 .linkedFramework("Security"),
