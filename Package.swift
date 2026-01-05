@@ -10,20 +10,38 @@ let package = Package(
             name: "oneSDK",
             targets: ["oneSDK"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/facebook/facebook-ios-sdk.git", from: "9.0.0"),
+        .package(url: "https://github.com/google/GoogleSignIn-iOS.git", from: "8.0.0"),
+        .package(url: "https://github.com/adjust/ios_sdk.git", from: "5.4.0")
+    ],
     targets: [
         .binaryTarget(
             name: "oneSDKBranch",
             url: "https://github.com/globaljollity/ios_sdk_test/raw/main/oneSDK.xcframework.zip",
-            checksum: "f1a789b928c5002859e4c01a6dec7c503c8fc5ac2e0c1521a9a8d89a4c2202ca"
+            checksum: "7117f717e517865abdd4f113e75220949b7b201d55f4aa6c18ab41ae6d800db9"
         ),
         .target(
             name: "oneSDK",
             dependencies: [
-                "oneSDKBranch" // 仅依赖二进制包，无其他第三方依赖
+                "oneSDKBranch",
+                .product(name: "FacebookCore", package: "facebook-ios-sdk"),
+                .product(name: "FacebookLogin", package: "facebook-ios-sdk"),
+                .product(name: "FacebookShare", package: "facebook-ios-sdk"),
+                .product(name: "FacebookGamingServices", package: "facebook-ios-sdk"),
+                .product(name: "AdjustGoogleOdm", package: "ios_sdk"),
+                .product(name: "AdjustSdk", package: "ios_sdk"),
+                .product(name: "AdjustWebBridge", package: "ios_sdk"),
+                .product(name: "GoogleSignIn", package: "GoogleSignIn-iOS"),
+                .product(name: "GoogleSignInSwift", package: "GoogleSignIn-iOS")
             ],
             linkerSettings: [
-                
+                .linkedFramework("Security"),
+                .linkedFramework("Accounts"),
+                .linkedFramework("Social"),
+                .linkedFramework("CoreTelephony"),
+                .linkedFramework("SystemConfiguration"),
+                .linkedFramework("WebKit")
             ]
         ),
         .testTarget(
